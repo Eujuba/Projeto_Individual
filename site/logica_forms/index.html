@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+informe o mês que você nasceu <br>
+<select id="select_mes">
+    <option value="1">Jan - Fev</option> 
+    <option value="2">Abril - Jun</option>
+    <option value="3">Jun - Set</option>
+    <option value="4">Out - Dez</option>
+</select> <br>
+<!-- 1 = George, 2 = Paul, 3 = Ringo, 4= John 
+começa com 50 pontos  -->
+
+
+Quem você seria em uma banda? <br>
+<select id="select_banda">
+    <option value="1">Vocalista</option>
+    <!-- retira 25 pontos -->
+    
+    <option value="2">Baixista</option>
+    <!-- retira 15 pontos -->
+
+    <option value="3">Guitarrista</option>
+    <!-- retira 10 pontos -->
+
+    <option value="4">Bateirista</option>
+    <!-- retira 20 pontos -->
+
+</select> <br>
+<!-- 1 = John, 2 = Paul, 3 = George, Bateirista = Ringo -->
+
+
+Você em seu grupo é?  <br>
+<select id="select_personalidade">
+    <option value="1">Quieto</option>
+    <!-- retira 20 pontos -->
+
+    <option value="2">Brincalhão</option>
+    <!-- retira 20 pontos -->
+
+    <option value="3">Social</option>
+    <!-- retira 5 pontos -->
+
+    <option value="4">Líder</option>
+    <!-- retira 5 pontos -->
+
+</select> <br>
+<!-- 1 = George, 2 = Ringo, 3 = Paul, 4 = John -->
+
+
+Você é?  <br>
+<select id="select_tipo">
+    <option value="1">Extrovertido</option>
+    <!-- ganha 10 pontos -->
+
+    <option value="2">Introvertido</option>
+    <!-- retira 5 pontos -->
+
+</select> <br>
+<!-- 1 = paul e john, 2 = george e ringo -->
+
+
+
+<button onclick="verificar()">Verificar integrante</button>
+<br>
+<div id="resultado"></div>
+
+</body>
+</html>
+
+
+<script>
+var pontos = 50;
+function verificar(){
+        var mes = Number(select_mes.value);   
+        var integrante_banda = Number(select_banda.value);
+        var personalidade = Number(select_personalidade.value);
+        var tipo = Number(select_tipo.value);
+
+       
+
+        if (mes  == 1 || mes == 2 || mes == 3 || mes == 4){
+
+            if (integrante_banda == 1){
+                pontos -= 25;
+                
+                if(personalidade == 1){
+                    pontos -= 20;
+                    if (tipo == 1){
+                        pontos += 10;
+                    } else if( tipo == 2){
+                        pontos += 5;
+                    }
+
+                } else if (personalidade == 2){
+                    pontos -= 20;
+                    if (tipo == 1){
+                        pontos += 10;
+                    } else if( tipo == 2){
+                        pontos += 5;
+                    }
+
+                } else if (personalidade == 3){
+                    pontos += 5;
+                    if (tipo == 1){
+                        pontos += 10;
+                    } else if( tipo == 2){
+                        pontos += 5;
+                    }
+
+                } else if (personalidade == 4){
+                    pontos += 5;
+                    if (tipo == 1){
+                        pontos += 10;
+                    } else if( tipo == 2){
+                        pontos += 5;
+                    }
+                }
+            }
+
+            if(integrante_banda == 2){
+                pontos -= 15
+                
+                if(personalidade == 1){
+                    pontos -= 20;
+                    if (tipo == 1){
+                        pontos += 10;
+                    } else if( tipo == 2){
+                        pontos += 5;
+                    }
+
+                } else if (personalidade == 2){
+                    pontos -= 20;
+                    if (tipo == 1){
+                        pontos += 10;
+                    } else if( tipo == 2){
+                        pontos += 5;
+                    }
+
+                } else if (personalidade == 3){
+                    pontos += 5;
+                    if (tipo == 1){
+                        pontos += 10;
+                    } else if( tipo == 2){
+                        pontos += 5;
+                    }
+
+                } else if (personalidade == 4){
+                    pontos += 5;
+                    if (tipo == 1){
+                        pontos += 10;
+                    } else if( tipo == 2){
+                        pontos += 5;
+                    }
+                }
+
+            }
+
+            if(integrante_banda == 3){
+                pontos -= 10
+
+                if(personalidade == 1){
+                    pontos -= 20;
+                    if (tipo == 1){
+                        pontos += 10;
+                    } else if( tipo == 2){
+                        pontos += 5;
+                    }
+
+                } else if (personalidade == 2){
+                    pontos -= 20;
+                    if (tipo == 1){
+                        pontos += 10;
+                    } else if( tipo == 2){
+                        pontos += 5;
+                    }
+
+                } else if (personalidade == 3){
+                    pontos += 5;
+                    if (tipo == 1){
+                        pontos += 10;
+                    } else if( tipo == 2){
+                        pontos += 5;
+                    }
+
+                } else if (personalidade == 4){
+                    pontos += 5;
+                    if (tipo == 1){
+                        pontos += 10;
+                    } else if( tipo == 2){
+                        pontos += 5;
+                    }
+                }
+            }
+
+            if(integrante_banda == 4){
+                pontos -= 20
+
+                if(personalidade == 1){
+                    pontos -= 20;
+                    if (tipo == 1){
+                        pontos += 10;
+                    } else if( tipo == 2){
+                        pontos += 5;
+                    }
+
+                } else if (personalidade == 2){
+                    pontos -= 20;
+                    if (tipo == 1){
+                        pontos += 10;
+                    } else if( tipo == 2){
+                        pontos += 5;
+                    }
+
+                } else if (personalidade == 3){
+                    pontos += 5;
+                    if (tipo == 1){
+                        pontos += 10;
+                    } else if( tipo == 2){
+                        pontos += 5;
+                    }
+
+                } else if (personalidade == 4){
+                    pontos += 5;
+                    if (tipo == 1){
+                        pontos += 10;
+                    } else if( tipo == 2){
+                        pontos += 5;
+                    }
+                }
+            }
+
+            
+        }
+        
+        if (pontos == 15){
+            alert("Você é o George")
+        } else if (pontos == 20){
+            alert("Você é o Ringo")
+        } else if (pontos == 25){
+            alert("Você é o Paul")
+        } else if (pontos == 30){
+            alert ("Você é o John")
+        }
+    }
+</script>
+
+
+<!-- analytics -- https://public.tableau.com/views/BeatlesAnalysis/BeatlesAnalysis?%3Aembed=y&%3AshowVizHome=no&%3AshowVizHome=no&%3Ahost_url=https%3A%2F%2Fpublic.tableau.com%2F&%3Atabs=no&%3Atoolbar=yes&%3Aanimate_transition=yes&%3Adisplay_static_image=no&%3Adisplay_spinner=no&%3Adisplay_overlay=yes&%3Adisplay_count=yes&%3AshowTabs=y&%3AloadOrderID=0 -->

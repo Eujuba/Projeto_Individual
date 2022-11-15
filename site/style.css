@@ -1,0 +1,24 @@
+*{
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+header{
+  background-color: #FDD92A;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 110px;
+}
+
+header .container-logo img{
+  width: 130px;
+  height: 70px;
+}
+
+header .container-menu ul{
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
