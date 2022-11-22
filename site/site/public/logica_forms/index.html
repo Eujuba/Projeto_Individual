@@ -52,7 +52,7 @@
       <input type="radio" id="bateirista" name="banda" value="Ringo" />
       <label for="bateirista">Bateirista</label>
     </div>
-    <br />
+    <br/>
     <!-- 1 = John, 2 = Paul, 3 = George, Bateirista = Ringo -->
 
     Você em seu grupo é? <br />
@@ -76,19 +76,61 @@
       <input type="radio" id="lider" name="personalidade" value="John" />
       <label for="lider">Líder</label>
     </div>
-    <br />
+    <br/>
 
-    <br />
+    <br/>
     <!-- 1 = George, 2 = Ringo, 3 = Paul, 4 = John -->
 
+
+    Qual opção representa seus valores? <br />
+
+    <div>
+      <input type="radio" id="amor" name="valores" value="Paul" />
+      <label for="amor">Amor</label>
+    </div>
+
+    <div>
+      <input type="radio" id="inteligencia" name="valores" value="George"/>
+      <label for="inteligencia">Idependência</label>
+    </div>
+
+    <div>
+      <input type="radio" id="bondade" name="valores" value="John" />
+      <label for="bondade">Bondade</label>
+    </div>
+
+    <div>
+      <input type="radio" id="coragem" name="valores" value="Ringo" />
+      <label for="coragem">Coragem</label>
+    </div>
+    <br/>
+
+
+
     Você é? <br />
-    <select id="select_tipo">
-      <option value="1">Extrovertido</option>
+
+    <div>
+      <input type="radio" id="personalidade" name="valores" value="Paul" />
+      <label for="amor">Amor</label>
+    </div>
+
+    <div>
+      <input type="radio" id="personalidade" name="valores" value="George"/>
+      <label for="inteligencia">Idependência</label>
+    </div>
+
+    <div>
+      <input type="radio" id="bondade" name="valores" value="John" />
+      <label for="bondade">Bondade</label>
+    </div>
+
+    <div>
+      <input type="radio" id="coragem" name="valores" value="Ringo" />
+      <label for="coragem">Coragem</label>
+    </div>
+    <br/>
 
 
-      <option value="2">Introvertido</option>
-
-    </select>
     <br />
     <!-- 1 = paul e john, 2 = george e ringo -->
 
@@ -105,11 +147,13 @@
     var mes = document.querySelector('input[name="mes"]:checked').value;
     var banda = document.querySelector('input[name="banda"]:checked').value;
     var personalidade = document.querySelector('input[name="personalidade"]:checked').value;
+    var valores = document.querySelector('input[name="valores"]:checked').value;
+
     integrantes.push(mes, banda, personalidade);
 
-    // verificar qual nome mais aparece no array
-   
     
+    
+    // verificar qual nome mais aparece no array
     var countJohn = 0;
     var countGeorge = 0;
     var countPaul = 0;
