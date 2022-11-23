@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
@@ -29,10 +29,9 @@
     </div>
 
     <br />
-    <!-- 1 = George, 2 = Paul, 3 = Ringo, 4= John  -->
+   
 
     Quem você seria em uma banda? <br />
-
     <div>
       <input type="radio" id="vocalista" name="banda" value="John" />
       <label for="vocalista">Vocalista</label>
@@ -49,14 +48,13 @@
     </div>
 
     <div>
-      <input type="radio" id="bateirista" name="banda" value="Ringo" />
-      <label for="bateirista">Bateirista</label>
+      <input type="radio" id="baterista" name="banda" value="Ringo" />
+      <label for="baterista">Baterista</label>
     </div>
     <br/>
-    <!-- 1 = John, 2 = Paul, 3 = George, Bateirista = Ringo -->
+    
 
-    Você em seu grupo é? <br />
-
+    Você em seu grupo é? <br/>
     <div>
       <input type="radio" id="quieto" name="personalidade" value="George" />
       <label for="quieto">Quieto</label>
@@ -79,7 +77,7 @@
     <br/>
 
     <br/>
-    <!-- 1 = George, 2 = Ringo, 3 = Paul, 4 = John -->
+   
 
 
     Qual opção representa seus valores? <br />
@@ -90,8 +88,8 @@
     </div>
 
     <div>
-      <input type="radio" id="inteligencia" name="valores" value="George"/>
-      <label for="inteligencia">Idependência</label>
+      <input type="radio" id="independencia" name="valores" value="George"/>
+      <label for="independencia">Independência</label>
     </div>
 
     <div>
@@ -104,35 +102,8 @@
       <label for="coragem">Coragem</label>
     </div>
     <br/>
+     <br/>
 
-
-
-    Você é? <br />
-
-    <div>
-      <input type="radio" id="personalidade" name="valores" value="Paul" />
-      <label for="amor">Amor</label>
-    </div>
-
-    <div>
-      <input type="radio" id="personalidade" name="valores" value="George"/>
-      <label for="inteligencia">Idependência</label>
-    </div>
-
-    <div>
-      <input type="radio" id="bondade" name="valores" value="John" />
-      <label for="bondade">Bondade</label>
-    </div>
-
-    <div>
-      <input type="radio" id="coragem" name="valores" value="Ringo" />
-      <label for="coragem">Coragem</label>
-    </div>
-    <br/>
-
-
-    <br />
-    <!-- 1 = paul e john, 2 = george e ringo -->
 
     <button onclick="verificar()">Verificar integrante</button>
     <br />
@@ -171,6 +142,7 @@
       }
     }
 
+
     if (countJohn > countGeorge && countJohn > countPaul && countJohn > countRingo) {
       resultado.innerHTML = "Você é John Lennon";
     } else if (countGeorge > countJohn && countGeorge > countPaul && countGeorge > countRingo) {
@@ -186,5 +158,9 @@
   }
 </script>
 
-<!--
+<!-- var persona = ""
+  if(resultadp == paul)
+  persona = paul
+
     
+// se o resultado deu john colocar a variavel john com o número do id dele
