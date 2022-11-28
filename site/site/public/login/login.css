@@ -8,24 +8,102 @@
     font-family: "Inter", sans-serif;
 }
 
-.container-login{
-    position: relative;
-    width: 100%;
-    height: 100vh;
+header {
+    background-color: #fdd92a;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 110px;
+  }
+  
+  header .container-logo img {
+    width: 130px;
+    height: 70px;
+  }
+  
+  header .container-menu {
     display: flex;
     flex-direction: row;
+    align-items: center;
+  }
+  
+  header .container-menu ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header .container-menu ul li {
+    list-style: none;
+    padding: 0 20px;
+  }
+  
+  header .container-menu ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  header .container-menu ul li a:hover {
+    border-bottom: 2px solid #000;
+  }
+  
+  header .container-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 63px;
+  }
+  
+  header .container-buttons .btn {
+    width: 100%;
+    max-width: 156px;
+    padding: 16px 38px;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  header .container-buttons .btn.btn-login {
+    background: transparent;
+    border: 3px solid #15a0d7;
+    border-radius: 10px;
+    color: #000000;
+  }
+  
+  header .container-buttons .btn.btn-cadastro {
+    background: #15a0d7;
+    border-radius: 10px;
+    color: #fff;
+  }
+
+
+
+/* conteudo */
+.container-login{
+  position: relative;
+  height: 75vh;
+  display: flex;
+  flex-direction: row;
+  margin: 30px 100px 30px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.2);
+  border-radius: 20px;
 }
 
 .img-box{
     width: 50%;
-    height: 100vh;
-    background-color: aqua;
+}
+
+.img-box.login img{
+    transform: scaleX(-1);
 }
 
 .img-box img{
     width: 100%;
     height: 100%;
     display: block;
+    border-radius: 0 20px 20px 0;
 }
 
 /* Conteudo da direta */
@@ -37,16 +115,15 @@
     width: 50%;
 }
 
-.content-box form{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
+.content-box .form-login{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+ }
 
 .content-box .form-box {
-    width: 50%;
+    width: 70%;
     padding: 50px;
-    box-shadow: 0 0 40px rgba(0,0,0,0.2);
     border-radius: 20px;
 }
 
@@ -104,6 +181,19 @@
 }
 
 
+.resultado_cadastro{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.span_resultado_cadastro{
+color:  #002eac;
+}
+
+.span_validacao{
+  font-size: 12px;
+  color: red;
+}
 
 

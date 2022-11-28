@@ -8,51 +8,75 @@
     <link rel="stylesheet" href="cadastro.css" />
   </head>
   <body>
+    <header>
+      <div class="container-logo">
+        <img src="../assets/logo.png" alt="logo" />
+      </div>
+
+      <div class="container-menu">
+        <nav>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#">Curiosidade</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Quiz</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="container-buttons">
+        <a class="btn btn-login" href="../login/login.html">Login</a>
+        <a class="btn btn-cadastro" href="#">Cadastrar</a>
+      </div>
+    </header>
+
     <div class="container-cadastro">
-      <div class="img-box">
+      <div class="img-box cadastro">
         <img src="../assets/capa.jpg" alt="" />
       </div>
 
       <div class="content-box">
         <div class="form-box">
           <h2>Faça cadastro</h2>
-          <div>
+          <div class="form-cadastro">
             <div class="input-box">
-              <label>Nome</label>
+              <label
+                >Nome <span id="span_nome" class="span_validacao"></span></label>
               <input type="name" placeholder="Seu nome" id="nome_input" />
             </div>
 
             <div class="input-box">
-              <label>Email</label>
-              <input
-                type="email"
-                placeholder="email@gmail.com"
-                id="email_input"
-              />
+              <label
+                >Email <span id="span_email" class="span_validacao"></span></label>
+              <input type="email" placeholder="email@gmail.com" id="email_input"/>
             </div>
 
             <div class="input-box">
-              <label>Senha</label>
-              <input type="password" placeholder="******" id="senha_input" />
+              <label
+                >Senha <span id="span_senha" class="span_validacao"></span></label>
+              <input type="password" placeholder="******" id="senha_input"/>
             </div>
 
             <div class="input-box">
-              <label>Cofirmação de senha</label>
-              <input
-                type="password"
-                placeholder="******"
-                id="confirmacao_senha_input"
-              />
+              <label>Cofirmação de senha
+                <span id="span_confirmacao_senha" class="span_validacao"></span></label>
+              <input type="password" placeholder="******" id="confirmacao_senha_input"/>
             </div>
 
             <div class="input-box">
-              <button onclick="cadastrar()" class="submit" type="submit" > Cadastrar </button>
+              <button onclick="cadastrar()" class="submit" type="submit">
+                Cadastrar
+              </button>
+            </div>
+
+            <div class="resultado_cadastro">
+              <span id="resultado" class="span_resultado_cadastro"></span>
             </div>
 
             <div class="input-box">
               <p>Já tem uma conta? <a href="#">Faça Login</a></p>
             </div>
-        </div>
+          </div>
         </div>
       </div>
     </div>
@@ -61,9 +85,8 @@
 
 <script>
   function cadastrar() {
-    // aguardar();
-
-    // Recebe os valores inseridos nos inputs
+    //abaixo recupera o valor da nova input pelo nome do id
+    // depois vai para método fetch logo abaixo
     var nomeVar = nome_input.value;
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
@@ -75,55 +98,51 @@
       senhaVar == "" ||
       confirmacaoSenhaVar == ""
     ) {
-      alert("Preencha todos os campos");
-
-    //   finalizarAguardar();
-      return false;
+      span_nome.innerHTML = "* campo obrigatório";
+      span_email.innerHTML = "* campo obrigatório";
+      span_senha.innerHTML = "* campo obrigatório";
+      span_confirmacao_senha.innerHTML = "* campo obrigatório";
+    } else if (senhaVar.length < 6) {
+      span_senha.innerHTML = "senha deve ter no mínimo 6 caracteres";
+    } else if (senhaVar != confirmacaoSenhaVar) {
+      span_senha.innerHTML = "* Senhas não conferem";
+    } else if (!isNaN(nomeVar)) {
+      span_nome.innerHTML = "* Nome inválido";
+    } else if (emailVar.indexOf("@") == -1) {
+      span_email.innerHTML = "* Email inválido";
     } else {
-    //   setInterval(sumirMensagem, 5000);
-        alert("td certo por enquanto");
-    }
+      resultado.innerHTML = "Feito! Redirecionando para login...";
 
-    // envia para a rota de cadastro
-    fetch("/usuarios/cadastrar", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        // criando os atributos
-        nomeServer: nomeVar,
-        emailServer: emailVar,
-        senhaServer: senhaVar,
-      }),
-    })
-      .then(function (resposta) {
-        console.log("resposta: ", resposta);
-
-        if (resposta.ok) {
-        //   cardErro.style.display = "block";
-
-        alert("Cadastro realizado com sucesso");
-
-        //   setTimeout(() => {
-        //     window.location = "login.html";
-        //   }, "2000");
-
-        //   limparFormulario();
-        //   finalizarAguardar();
-        } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
-        }
+      fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // criando um objeto com os valores das inputs (adicionar aqui caso queira add mais inputs)
+          // Agora vá para o arquivo routes/usuario.js
+          nomeServer: nomeVar,
+          emailServer: emailVar,
+          senhaServer: senhaVar,
+          confirmacaoSenhaServer: confirmacaoSenhaVar,
+        }),
       })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-        // finalizarAguardar();
-      });
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
 
-    return false;
-  }
-
-  function sumirMensagem() {
-    // cardErro.style.display = "none";
+          if (resposta.ok) {
+            // redireciona para a tela de login
+            console.log("redirecionando para login");
+             setTimeout(() => {
+               window.location = "../login/login.html";
+             }, "2000");
+          } else {
+            throw "Houve um erro ao tentar realizar o cadastro!";
+          }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+        });
+    }
   }
 </script>

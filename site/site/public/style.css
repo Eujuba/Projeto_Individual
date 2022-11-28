@@ -61,16 +61,13 @@ header .container-buttons .btn {
   font-weight: 600;
   font-size: 18px;
   text-align: center;
+  text-decoration: none;
 }
 
 header .container-buttons .btn.btn-login {
   background: transparent;
   border: 3px solid #15a0d7;
   border-radius: 10px;
-}
-
-.container-buttons .btn.btn-login a{
-  text-decoration: none;
   color: #000000;
 }
 
@@ -150,7 +147,7 @@ main .conteudo-inicial .imagens .inferior {
 main .curiosidade {
   display: flex;
   flex-direction: column;
-  padding: 150px 146px 83px 146px;
+  padding: 110px 146px 83px 146px;
   background-image: url(./assets/curiosidade.png);
   background-repeat: no-repeat;
   background-size: 100%;
@@ -166,8 +163,8 @@ main .curiosidade h2 {
 
 main .curiosidade p {
   font-weight: 600;
-  font-size: 36px;
-  line-height: 44px;
+  font-size: 32px;
+  line-height: 40px;
   color: #ffffff;
 }
 
@@ -252,6 +249,7 @@ main .missao-visao-valores {
   justify-content: space-between;
   margin: 115px 0 250px;
   padding: 0 259px;
+  gap: 25px;
 }
 
 main .missao-visao-valores .card {
