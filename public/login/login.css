@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-family: "Inter", sans-serif;
+}
+
+header {
+    background-color: #fdd92a;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 110px;
+  }
+  
+  header .container-logo img {
+    width: 130px;
+    height: 70px;
+  }
+  
+  header .container-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  header .container-menu ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header .container-menu ul li {
+    list-style: none;
+    padding: 0 20px;
+  }
+  
+  header .container-menu ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  header .container-menu ul li a:hover {
+    border-bottom: 2px solid #000;
+  }
+  
+  header .container-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 63px;
+  }
+  
+  header .container-buttons .btn {
+    width: 100%;
+    max-width: 156px;
+    padding: 16px 38px;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  header .container-buttons .btn.btn-login {
+    background: transparent;
+    border: 3px solid #15a0d7;
+    border-radius: 10px;
+    color: #000000;
+  }
+  
+  header .container-buttons .btn.btn-cadastro {
+    background: #15a0d7;
+    border-radius: 10px;
+    color: #fff;
+  }
+
+
+
+/* conteudo */
+.container-login{
+  position: relative;
+  height: 75vh;
+  display: flex;
+  flex-direction: row;
+  margin: 30px 100px 30px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.2);
+  border-radius: 20px;
+}
+
+.img-box{
+    width: 50%;
+}
+
+.img-box.login img{
+    transform: scaleX(-1);
+}
+
+.img-box img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 0 20px 20px 0;
+}
+
+/* Conteudo da direta */
+
+.content-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.content-box .form-login{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+ }
+
+.content-box .form-box {
+    width: 70%;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.content-box .form-box h2{
+    color: black;
+    font-weight: 800;
+    font-size: 3em;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.content-box .form-box .input-box label{
+    color: black;
+    font-weight: 600;
+    font-size: 1em;
+   
+}
+
+.content-box .form-box .input-box input{
+    width: 100%;
+    padding: 10px;
+    outline:  none;
+    font-weight: 400;
+    border: none;
+    font-size: 17px;
+    color: black;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.content-box .form-box .input-box .submit{
+    width: 100%;
+    padding: 10px;
+    outline:  none;
+    font-weight: 600;
+    border: none;
+    font-size: 17px;
+    color: white;
+    background: rgb(84,163,230);
+    background: linear-gradient(121deg, rgba(84,163,230,1) 0%, rgba(237,39,56,1) 40%, rgba(211,207,36,1) 80%, rgba(92,175,32,1) 100%);    margin-top: 5px;
+    cursor: pointer;
+}
+
+.content-box .form-box .input-box input:focus{
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.content-box .form-box .input-box a{
+    color: black;
+    font-weight: 600;
+    font-size: 1em;    
+    margin-top: 10px;
+    text-align: right;
+}
+
+
+.resultado_cadastro{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.span_resultado_cadastro{
+color:  #002eac;
+}
+
+.span_validacao{
+  font-size: 12px;
+  color: red;
+}
+
+
