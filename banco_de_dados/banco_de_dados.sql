@@ -16,11 +16,10 @@ CREATE TABLE  IF NOT EXISTS usuario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(50),
 	email VARCHAR(50),
-	senha VARCHAR(50),
+	senha VARCHAR(100),
     fkIntegrante int, 
     foreign key (fkIntegrante) references integrante (idIntegrante)
 );
-
 
 CREATE TABLE  IF NOT EXISTS musica_favorita (
     nome varchar (45),
@@ -36,11 +35,9 @@ CREATE TABLE IF NOT EXISTS comentario (
 	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
 );
 
-Insert into integrante values
-(null, 'Paul McCartney'),
-(null, 'John Lennon'),
-(null, 'Ringo Starr'),
-(null, 'George Harrison');
-
+select* from integrante;
 select* from usuario;
-select*from integrante;
+select* from musica_favorita;
+select* from comentario;
+
+select count(fkIntegrante) from usuario where fkIntegrante = 4;
