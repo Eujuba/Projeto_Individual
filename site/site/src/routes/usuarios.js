@@ -24,5 +24,11 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
+router.get("/analytic", function (req, res) {
+    usuarioController.dados(req, res);
+});
+
+
+
 
 module.exports = router;

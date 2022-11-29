@@ -37,12 +37,37 @@ function alterar(id, fkIntegrante) {
     `
 
     console.log("Executando a instrução SQL: \n" + instrucao);
+    atualizar(fkIntegrante)
     return database.executar(instrucao);
 }
+
+function atualizar( fkIntegrante){
+    var instrucao = `
+    update integrante set qnt_tirado =  qnt_tirado + 1 where idIntegrante = ${id};
+`
+
+console.log("Executando a instrução SQL: \n" + instrucao);
+return database.executar(instrucao);
+}
+
+
+
+function dados() {
+     instrucao = `
+     select nome,qnt_tirado from integrante;
+    `
+
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+
+}
+
+
 
 module.exports = {
     entrar,
     cadastrar,
     listar,
-    alterar
+    alterar,
+    dados
 };
