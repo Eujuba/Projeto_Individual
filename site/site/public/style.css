@@ -314,3 +314,9 @@ main .beatles a {
   padding: 20px;
   text-decoration: none;
 }
+
+.analytics-beatles{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

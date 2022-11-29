@@ -123,9 +123,10 @@
               sessionStorage.NOME_USUARIO = json.nome;
               sessionStorage.ID_USUARIO = json.id;
               sessionStorage.PERSONA_USUARIO = 
-              json.fkIntegrante == 1 ? "Paul" : 
-              json.fkIntegrante == 2 ? "John" : 
-              json.fkIntegrante == 3 ? "Ringo" : "George";
+              json.fkIntegrante == 1 ? "John" : 
+              json.fkIntegrante == 2 ? "Paul" : 
+              json.fkIntegrante == 3 ? "Ringo" :
+              json.fkIntegrante == 4 ? "George" : "..."
 
               resultado.innerHTML = "Login realizado com sucesso!";
 
