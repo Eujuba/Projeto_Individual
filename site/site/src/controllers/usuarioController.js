@@ -95,7 +95,7 @@ function cadastrar(req, res) {
 
 function alterar(req, res) {
     console.log(req, 'req');
-    var id = req.body.idServer;
+    var idUsuario = req.body.idServer;
     var fkIntegrante = req.body.fkIntegrante;
 
     if (id == undefined) {

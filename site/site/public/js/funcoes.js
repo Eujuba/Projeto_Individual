@@ -3,7 +3,7 @@ function validarSessao() {
 
     var email = sessionStorage.EMAIL_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
-    var persona = sessionStorage.PERSONA_USUARIO;
+    var fkIntegrante = sessionStorage.PERSONA_USUARIO;
 
 
     var b_usuario = document.getElementById("b_usuario");
@@ -11,7 +11,7 @@ function validarSessao() {
     if (email != undefined && nome != undefined && fkIntegrante != undefined) {
         window.alert(`Seja bem-vindo, ${nome}!`);
         b_usuario.innerHTML = nome;
-        b_fkIntegrante.innerHTML = persona;
+        b_fkIntegrante.innerHTML = fkIntegrante;
         
 
 

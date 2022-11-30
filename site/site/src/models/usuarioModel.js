@@ -41,9 +41,9 @@ function alterar(id, fkIntegrante) {
     return database.executar(instrucao);
 }
 
-function atualizar( fkIntegrante){
+function atualizar(fkIntegrante){
     var instrucao = `
-    update integrante set qnt_tirado =  qnt_tirado + 1 where idIntegrante = ${id};
+    update integrante set qnt_tirado =  qnt_tirado + 1 where idIntegrante = ${fkIntegrante};
 `
 
 console.log("Executando a instrução SQL: \n" + instrucao);

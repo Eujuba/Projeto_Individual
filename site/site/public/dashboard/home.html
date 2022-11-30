@@ -46,7 +46,7 @@
         </div>
 
         <div class="card-persona">
-          <h3>Atual Persona: <span id="NOMEDOINTEGRANTE">...</span></h3>
+          <h3>Atual Persona: <span id="b_fkIntegrante">...</span></h3>
           <div id="kpi_integrante"></div>
         </div>
 
@@ -310,7 +310,7 @@
 <script>
 
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-    b_fkIntegrante = sessionStorage.PERSONA_USUARIO;
+    b_fkIntegrante.innerHTML = sessionStorage.PERSONA_USUARIO;
     
     
     
@@ -323,7 +323,7 @@
   }
   
   var nomeIntegrante = sessionStorage.PERSONA_USUARIO;
-  NOMEDOINTEGRANTE.innerHTML = nomeIntegrante;
+  b_fkIntegrante.innerHTML = nomeIntegrante;
 
   if(nomeIntegrante == "John"){
     kpi_integrante.innerHTML = `<img src="../assets/persona-john.png" alt="" />`;
