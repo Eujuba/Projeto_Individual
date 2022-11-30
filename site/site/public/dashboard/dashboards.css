@@ -1,9 +1,10 @@
-/* pagina mural */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 *,
 body {
   margin: 0;
   padding: 0;
+  font-family: "Inter", sans-serif;
 }
 
 
@@ -77,7 +78,7 @@ body {
 .dash-right .avisos .div-form textarea {
   width: 100%;
   /* color: #E6005A; */
-  border: 3px solid #e6005a;
+  border: 3px solid #15a0d7;
   background-color: white;
   border-radius: 5px;
 }
@@ -91,7 +92,7 @@ body {
   font-size: 18px;
   padding: 10px 15px;
   color: white;
-  background-color: #e6005a;
+  background-color: #15a0d7;
   width: 120px;
 }
 
@@ -104,7 +105,7 @@ body {
   font-size: 14px;
   padding: 5px 8px;
   color: white;
-  background-color: #e6005a;
+  background-color: #15a0d7;
   width: 80px;
 }
 
@@ -115,7 +116,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  border-bottom: 3px solid #e6005a;
+  border-bottom: 3px solid #15a0d7;
   padding: 20px;
 }
 
@@ -145,7 +146,7 @@ body {
 /* pagina graficos */
 
 .dash-header {
-  background-color: #212124;
+  background-color: white;
 }
 
 .dash {
@@ -153,7 +154,7 @@ body {
   position: relative;
   top: 0;
   left: 25%;
-  background-color: #161618;
+  background-color: white;
   height: 100vh;
 }
 
@@ -182,6 +183,7 @@ body {
   justify-content: space-evenly;
   align-items: center;
   background: rgb(84,163,230);
+  gap: 5px;
 }
 
 .dash-right {
@@ -193,7 +195,6 @@ body {
   top: 0;
   left: 25%;
 }
-
 
 
 .hello {
@@ -214,11 +215,11 @@ body {
 
 .btn-nav {
   width: 40%;
-  color: white;
-  background-color: #e6005a;
+  color: black;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
+  background-color: white;
 }
 
 
@@ -226,14 +227,13 @@ body {
 .btn-nav-white {
   width: 40%;
   background-color: white;
-  border: 3px solid #e6005a;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
 }
 
 
-.card-persona{
+.card-persona {
   width: 40%;
   background-color: white;
   border-radius: 5px;
@@ -248,7 +248,8 @@ body {
 }
 
 .btn-nav-white h3 {
-  color: #e6005a;
+  color: #000000;
+  background-color: white;
   padding: 0;
   margin: 0;
 }
@@ -257,6 +258,7 @@ body {
 .btn-logout h3 {
   margin: 0;
   padding: 0;
+  color: #000000;
 }
 
 .btn-logout {

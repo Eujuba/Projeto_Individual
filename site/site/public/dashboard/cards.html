@@ -24,35 +24,41 @@
 
 
         <div class="header-left dash-header">
-
-            <h1>AquaTech</h1>
-
+            <img src="../assets/logo.png" alt="logo" />
+    
             <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+              <h3>
+                Olá, <span id="b_usuario">usuário</span>. <br />
+                Divirta-se!
+              </h3>
             </div>
-
+    
+            <div class="card-persona">
+              <h3>Atual Persona: <span id="NOMEDOINTEGRANTE">...</span></h3>
+              <div id="kpi_integrante"></div>
+            </div>
+    
+    
+    
             <div class="btn-nav">
-                <h3>Aquários</h3>
+              <a href="./home.html"><h3>Home</h3></a>
             </div>
-
+    
+            <div class="btn-nav">
+              <a href="./dashboard.html"><h3>Gráficos</h3></a>
+            </div>
+    
             <div class="btn-nav-white">
-                <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
-                </a>
+              <a href="./mural.html">
+                <h3>Mural de Avisos</h3>
+              </a>
             </div>
-
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
-                </a>
-            </div>
-
+    
             <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
+              <h3>Sair</h3>
             </div>
-
-        </div>
-
+          </div>
+    
         <div class="dash">
             <div class="regua">
                 <div class="item-regua perigo-frio">
@@ -136,31 +142,31 @@
         setTimeout(atualizacaoPeriodica, 5000);
     }
 
-    function obterdados(idAquario) {
-        fetch(`/medidas/tempo-real/${idAquario}`)
-            .then(resposta => {
+    // function obterdados(idAquario) {
+    //     fetch(`/medidas/tempo-real/${idAquario}`)
+    //         .then(resposta => {
 
-                if (resposta.ok) {
-                    resposta.json().then(resposta => {
+    //             if (resposta.ok) {
+    //                 resposta.json().then(resposta => {
 
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+    //                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
-                        var dados = {
-                            temperatura: resposta[0].temperatura,
-                        }
+    //                     var dados = {
+    //                         temperatura: resposta[0].temperatura,
+    //                     }
 
-                        alertar(resposta[0].temperatura, idAquario);
-                    });
-                } else {
+    //                     alertar(resposta[0].temperatura, idAquario);
+    //                 });
+    //             } else {
 
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
-            })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
-            });
+    //                 console.error('Nenhum dado encontrado ou erro na API');
+    //             }
+    //         })
+    //         .catch(function (error) {
+    //             console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
+    //         });
 
-    }
+    // }
 
     function alertar(temperatura, idAquario) {
         var limites = {

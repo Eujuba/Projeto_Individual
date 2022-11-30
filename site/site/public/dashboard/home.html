@@ -47,17 +47,17 @@
 
         <div class="card-persona">
           <h3>Atual Persona: <span id="NOMEDOINTEGRANTE">...</span></h3>
-          <img id="kpi_integrante" src="" alt="" />
+          <div id="kpi_integrante"></div>
         </div>
 
-        <div class="btn-nav-white">
-          <a href="./cards.html">
-            <h3>Aquários</h3>
-          </a>
+
+
+        <div class="btn-nav">
+          <a href="./home.html"><h3>Home</h3></a>
         </div>
 
         <div class="btn-nav">
-          <h3>Gráficos</h3>
+          <a href="./dashboard.html"><h3>Gráficos</h3></a>
         </div>
 
         <div class="btn-nav-white">
@@ -326,13 +326,13 @@
   NOMEDOINTEGRANTE.innerHTML = nomeIntegrante;
 
   if(nomeIntegrante == "John"){
-    kpi_integrante.src = "../assets/persona-john.png";
+    kpi_integrante.innerHTML = `<img src="../assets/persona-john.png" alt="" />`;
   } else if(nomeIntegrante == "Paul"){
-    kpi_integrante.src = "../assets/persona-paul.png";
+    kpi_integrante.innerHTML = `<img src="../assets/persona-paul.png" alt="" />`;
   } else if(nomeIntegrante == "George"){
-    kpi_integrante.src = "../assets/persona-george.png";
+    kpi_integrante.innerHTML = `<img src="../assets/persona-george.png" alt="" />`;
   } else if(nomeIntegrante == "Ringo"){
-    kpi_integrante.src = "../assets/persona-ringo.png";
+    kpi_integrante.innerHTML = `<img src="../assets/persona-ringo.png" alt="" />`;
   }
   
   var integrantes = [];
