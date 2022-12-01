@@ -38,7 +38,7 @@
             </div>
     
             <div class="card-persona">
-              <h3>Atual Persona: <span id="NOMEDOINTEGRANTE">...</span></h3>
+              <h3>Atual Persona: <span id="b_fkIntegrante">...</span></h3>
               <div id="kpi_integrante"></div>
             </div>
     
@@ -62,7 +62,34 @@
               <h3>Sair</h3>
             </div>
           </div>
+
+          <div class="main">
+            <div class="content">
+              Veja abaixo meu char js 
+              <br>
+              <br>
+
+              <div id="grafico1" class="display-block">
+                <h3 class="tituloGraficos">
+                    <span id="tituloAquario1">123</span>
+                </h3>
+                <div class="graph">
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div class="label-captura">
+                    <p id="avisoCaptura1" style="color: white"></p>
+                </div>
+            </div>
+
+
+            </div>
+          </div>
+
+
+
     
+
+
 
 
 
@@ -87,7 +114,7 @@
     b_fkIntegrante = sessionStorage.PERSONA_USUARIO;
 
     var nomeIntegrante = sessionStorage.PERSONA_USUARIO;
-  NOMEDOINTEGRANTE.innerHTML = nomeIntegrante;
+    b_fkIntegrante.innerHTML = nomeIntegrante;
 
   if(nomeIntegrante == "John"){
     kpi_integrante.innerHTML = `<img src="../assets/persona-john.png" alt="" />`;
@@ -108,7 +135,7 @@
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
                     resposta.reverse();
 
-                    plotarGrafico(resposta, );
+                    plotarGrafico(resposta);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -124,65 +151,84 @@
     // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
     // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
     // A função *plotarGrafico* também invoca a função *atualizarGrafico*
-    // function plotarGrafico(resposta, ) {
-    //     console.log('iniciando plotagem do gráfico...');
 
-    //     // Criando estrutura para plotar gráfico - labels
-    //     let labels = [];
-        
-    //     // Criando estrutura para plotar gráfico - dados
-    //     let dados = {
-    //         labels: labels,
-    //         datasets: [{
-    //             label: 'Umidade',
-    //             data: [],
-    //             fill: false,
-    //             borderColor: 'rgb(75, 192, 192)',
-    //             tension: 0.1
-    //         },
-    //         {
-    //             label: 'Temperatura',
-    //             data: [],
-    //             fill: false,
-    //             borderColor: 'rgb(199, 52, 52)',
-    //             tension: 0.1
-    //         }]
-    //     };
-        
-    //     console.log('----------------------------------------------')
-    //     console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
-    //     console.log(resposta)
-        
-    //     // Inserindo valores recebidos em estrutura para plotar o gráfico
-    //     for (i = 0; i < resposta.length; i++) {
-    //         var registro = resposta[i];
-    //         labels.push(registro.momento_grafico);
-    //         dados.datasets[0].data.push(registro.umidade);
-    //         dados.datasets[1].data.push(registro.temperatura);
-    //     }
-        
-    //     console.log('----------------------------------------------')
-    //     console.log('O gráfico será plotado com os respectivos valores:')
-    //     console.log('Labels:')
-    //     console.log(labels)
-    //     console.log('Dados:')
-    //     console.log(dados.datasets)
-    //     console.log('----------------------------------------------')
-        
-    //     // Criando estrutura para plotar gráfico - config
-    //     const config = {
-    //         type: 'line',
-    //         data: dados,
-    //     };
 
-    //     // Adicionando gráfico criado em div na tela
-    //     let myChart = new Chart(
-    //         document.getElementById('myChart'),
-    //         config
-    //     );
 
-       
-    // }
+    function plotarGrafico(resposta ) {
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
+        
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'John',
+                data: [],
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            },
+            {
+                label: 'Paul',
+                data: [],
+                fill: false,
+                borderColor: 'rgb(199, 52, 52)',
+                tension: 0.1
+            },
+            {
+                label: 'Ringo',
+                data: [],
+                fill: false,
+                borderColor: 'rgb(199, 52, 52)',
+                tension: 0.1
+            },
+            {
+                label: 'george',
+                data: [],
+                fill: false,
+                borderColor: 'rgb(199, 52, 52)',
+                tension: 0.1
+            }
+          
+          ]
+        };
+        
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+        
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.nome);
+            dados.datasets[0].data.push(registro.nome);
+            dados.datasets[1].data.push(registro.qnt_tirado);
+        }
+        
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+        
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'bar',
+            data: dados,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+
+        // setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 2000);
+    }
 
 
     // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,

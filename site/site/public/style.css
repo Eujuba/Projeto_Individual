@@ -320,3 +320,18 @@ main .beatles a {
   justify-content: center;
   align-items: center;
 }
+
+
+.container-musica{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  flex-direction: column;
+}
+
+
+.container-musica .container-grafico{
+  width: 400px;
+  height: 400px;
+}

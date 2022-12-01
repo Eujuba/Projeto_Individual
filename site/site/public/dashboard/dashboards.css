@@ -283,3 +283,22 @@ body {
 .simulador .container {
   flex-direction: column
 }
+
+
+
+.main {
+  width: 75%;
+  position: relative;
+  top: 0;
+  left: 25%;
+  height: 100vh;
+}
+
+
+.content {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}

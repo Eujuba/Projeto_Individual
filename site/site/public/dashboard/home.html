@@ -66,6 +66,10 @@
           </a>
         </div>
 
+        
+
+
+
         <div class="btn-logout" onclick="limparSessao()">
           <h3>Sair</h3>
         </div>
@@ -102,7 +106,7 @@
                 <!-- primeira pergunta -->
                 <div class="slider on">
                   <h1>Informe o mês que você nasceu</h1>
-                  <br /><br />
+                  <br/>
                   <div>
                     <input type="radio" id="jan-mar" name="mes" value="George" />
                     <label for="jan-mar">Janeiro - Março</label>
@@ -313,7 +317,6 @@
     b_fkIntegrante.innerHTML = sessionStorage.PERSONA_USUARIO;
     
     
-    
     function iniciarQuiz() {
       containerSlider.style.display = "flex";
       
@@ -407,10 +410,6 @@
       resultado_descricao.innerHTML = "Assim como Ringo, você é uma pessoa que é muito protetora com aqueles que ama e que sempre esta esbanjando seu ótimo humor em qualquer lugar que esteja.";
     } 
 
-    // puxar do session storage o nome do integrante
-
-
-
 
     fetch("/usuarios/alterar", {
         method: "POST",
@@ -418,8 +417,6 @@
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          // criando um objeto com os valores das inputs (adicionar aqui caso queira add mais inputs)
-          // Agora vá para o arquivo routes/usuario.js
           idServer: idUsuario,
           fkIntegrante: integrante
           
