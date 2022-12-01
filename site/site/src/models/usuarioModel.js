@@ -31,9 +31,9 @@ function cadastrar(nome, email, senha) {
     return database.executar(instrucao);
 }
 
-function alterar(id, fkIntegrante) {
+function alterar(idUsuario, fkIntegrante) {
     var instrucao = `
-        UPDATE usuario SET fkIntegrante = '${fkIntegrante}' WHERE id = '${id}';
+        UPDATE usuario SET fkIntegrante = '${fkIntegrante}' WHERE id = '${idUsuario}';
     `
 
     console.log("Executando a instrução SQL: \n" + instrucao);
@@ -56,10 +56,8 @@ function dados() {
      instrucao = `
      select nome,qnt_tirado from integrante;
     `
-
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
-
 }
 
 

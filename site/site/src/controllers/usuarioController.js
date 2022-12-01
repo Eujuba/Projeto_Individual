@@ -98,13 +98,13 @@ function alterar(req, res) {
     var idUsuario = req.body.idServer;
     var fkIntegrante = req.body.fkIntegrante;
 
-    if (id == undefined) {
+    if (idUsuario == undefined) {
         res.status(400).send("Seu id está undefined!");
     } else if (fkIntegrante == undefined) {
         res.status(400).send("Seu fkIntegrante está undefined!");
     } else {
 
-        usuarioModel.alterar(id, fkIntegrante)
+        usuarioModel.alterar(idUsuario, fkIntegrante)
             .then(
                 function (resultado) {
                     res.json(resultado);
