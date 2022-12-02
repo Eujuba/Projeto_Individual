@@ -123,6 +123,35 @@ function alterar(req, res) {
 }
 
 
+function alterarAlbum(req, res) {
+    console.log(req, 'req');
+    var idAlbum = req.body.idAlbum;
+
+
+    if (idAlbum == undefined) {
+        res.status(400).send("Seu id está undefined!");
+    }
+
+    usuarioModel.alterarAlbum(idAlbum)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao realizar a alteração! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+
+}
+
+
+
 
 function dados(req, res) {
     usuarioModel.dados()
@@ -141,6 +170,22 @@ function dados(req, res) {
         );
 }
 
+function dados2(req, res) {
+    usuarioModel.dados2()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
 
 
 module.exports = {
@@ -149,5 +194,7 @@ module.exports = {
     listar,
     testar,
     alterar,
-    dados
+    dados,
+    dados2,
+    alterarAlbum
 }

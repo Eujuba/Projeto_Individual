@@ -20,6 +20,10 @@ router.post("/alterar", function (req, res) {
     usuarioController.alterar(req, res);
 });
 
+router.post("/atualizar-album", function (req, res) {
+    usuarioController.alterarAlbum(req, res);
+});
+
 router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
@@ -28,6 +32,9 @@ router.get("/analytic", function (req, res) {
     usuarioController.dados(req, res);
 });
 
+router.get("/analytic2", function (req, res) {
+    usuarioController.dados2(req, res);
+});
 
 
 

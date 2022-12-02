@@ -19,6 +19,10 @@ router.get("/pesquisar/:descricao", function (req, res) {
     comentarioController.pesquisarDescricao(req, res);
 });
 
+router.post("/publicar-album/:idAlbum", function (req, res) {
+    comentarioController.publicar(req, res);
+});
+
 router.post("/publicar/:idUsuario", function (req, res) {
     comentarioController.publicar(req, res);
 });
