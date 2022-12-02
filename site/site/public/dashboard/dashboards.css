@@ -49,7 +49,7 @@ body {
 
 .dash-right .avisos {
   width: 100%;
-  color: rgb(216, 216, 216);
+  color: black;
   font-family: "Exo 2", sans-serif;
 }
 
@@ -89,7 +89,6 @@ body {
 
 .dash-right .avisos .div-form textarea {
   width: 100%;
-
   background-color: white;
   border-radius: 5px;
 }
@@ -116,7 +115,7 @@ body {
   font-weight: 600;
   font-size: 14px;
   padding: 5px 8px;
-  color: white;
+  color:  #15a0d7;
   width: 80px;
 }
 
@@ -128,7 +127,9 @@ body {
   justify-content: center;
   align-items: stretch;
   padding: 20px;
-  background-color: #005463;
+  background-color:#15a0d7;
+  margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 .publicacao > *:not(:last-child) {
@@ -140,13 +141,13 @@ body {
 }
 
 .div-results .feed-container {
-  background-color: #212124;
+  background-color: white;
   border-radius: 5px;
   margin-bottom: 80px;
 }
 
 .div-buttons {
-  display: flex;
+  display: none;
   justify-content: flex-end;
 }
 
