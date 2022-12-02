@@ -27,8 +27,13 @@ body {
   align-items: center;
   background: rgb(84, 163, 230);
   gap: 5px;
+  padding-top: 50px;
 }
 
+.header-left .logo{
+  width: 150px;
+  height: 150px;
+}
 
 .hello {
   width: 100%;
@@ -39,7 +44,7 @@ body {
 .hello h3 {
   color: #000000;
   font-weight: 300;
-  font-size: 1.5rem;
+  font-size: 2.0rem;
 }
 
 .hello h3 span {
@@ -110,7 +115,7 @@ body {
 
 .janela {
   display: flex;
-  width: 100vw;
+  width: 100%;
 }
 
 .main {
@@ -136,7 +141,7 @@ body {
   font-size: 36px;
   line-height: 100%;
   text-align: center;
-  margin: 100px 0 30px 0
+  margin: 30px 0 30px 0
 
 }
 

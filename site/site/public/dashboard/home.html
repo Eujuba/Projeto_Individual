@@ -13,9 +13,11 @@
 
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="home.css" />
+        <link rel="stylesheet" href="./dashboards.css" />
     <link rel="stylesheet" href="./src/style.css"></link>
     <script src="../js/funcoes.js"></script>
     <script src="./src/script.js" defer></script>
+    <script src="./mural.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -33,10 +35,10 @@
     ></script>
   </head>
 
-  <body>
+  <body class="home">
     <div class="janela">
       <div class="header-left">
-        <img src="../assets/logo.png" alt="logo" />
+        <img src="../assets/logo.png" alt="logo" class="logo" />
 
         <div class="hello">
           <h3>
@@ -60,11 +62,11 @@
           <a href="./dashboard.html"><h3>Gráficos</h3></a>
         </div>
 
-        <div class="btn-nav-white">
+        <!-- <div class="btn-nav-white">
           <a href="./mural.html">
             <h3>Mural de comentario</h3>
           </a>
-        </div>
+        </div> -->
 
         
 
@@ -275,9 +277,9 @@
                 <h2 id="resultado_nome"></h2>
                 <p id="resultado_descricao"></p>
               </div>
-            </div>
+          </div>
 
-            <div class="album">
+            <div class="album" style="margin-bottom: 50px;">
               <div>
                 <h2>Vote dentre os álbuns abaixo o de sua preferência:</h2>
               </div>
@@ -285,24 +287,71 @@
               <div class="container-opcoes">
                 <div class="album-voto">
                   <img id="album1" src="../assets/album-abbey.png" alt="resultado-img" />
-                  <button class="btn-voto">Abbey Road</button>
+                  <button id="album-1" class="btn-voto" onclick="selecionAlbum(1)">Abbey Road</button>
                 </div>
   
                 <div class="album-voto">
                   <img id="album2" src="../assets/album-beatles.png" alt="resultado-img"/>
-                  <button class="btn-voto">The Beatles</button>
+                  <button id="album-2" class="btn-voto" onclick="selecionAlbum(2)">The Beatles</button>
                 </div>
   
                 <div class="album-voto">
                   <img id="album3" src="../assets/album-help.png" alt="resultado-img" />
-                  <button class="btn-voto">Help!</button>
+                  <button id="album-3" class="btn-voto" onclick="selecionAlbum(3)">Help!</button>
                 </div>
                 
+              </div>
+
+              <div class="resultado-album" id="resultado_album" style="display: none">
+
               </div>
             
             </div>
 
-          </div>
+
+            <div class="dash-right">
+              <div class="avisos" style="background-color: white">
+                <div class="container">
+                  <h2 style="color: black">Conte como você conheceu os Beatles <p>(apenas uma vez)</p></h2>
+                  <div class="div-form">
+                    <form
+                      id="form_postagem"
+                      method="post"
+                      onsubmit="return publicar()"
+                    >
+                      <label style="color: black">
+                        Título:
+                        <br />
+                        <input
+                          name="titulo"
+                          id="titulo"
+                          maxlength="100"
+                          type="text"
+                        />
+                      </label>
+                      <br />
+                      <label style="color: black">
+                        Descrição (máximo de 250 caracteres):
+                        <br />
+                        <textarea
+                          name="descricao"
+                          id="textarea_descricao"
+                          maxlength="250"
+                          rows="5"
+                        ></textarea>
+                      </label>
+                      <br />
+                      <button style="color: black" id="btn-enviar">Enviar</button>
+                    </form>
+                  </div>
+                  <h1 style="color: black">Mural de Comenarios</h1>
+                  <div class="div-results">
+                    <div id="feed_container" class="feed-container"></div>
+                  </div>
+                </div>
+              </div>
+
+        </div>
       </div>
 
     </div>
@@ -441,5 +490,38 @@
           console.log(`#ERRO: ${resposta}`);
         });
 
+  }
+
+
+  function selecionAlbum(idAlbum) {
+
+  fetch(`/usuarios/atualizar-album`, {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+          idAlbum: idAlbum,          
+        }),
+  })
+    .then(function (resposta) {
+      console.log("resposta: ", resposta);
+
+      if (resposta.ok) {
+       resultado_album.style.display = "flex";
+        resultado_album.innerHTML = `Você escolheu o álbum ${" " + idAlbum == 1 ? " Abbey Road" : idAlbum == 2 ? " The Beatles" : " Help"}`;
+      } else if (resposta.status == 404) {
+        window.alert("Deu 404!");
+      } else {
+        throw (
+          "Houve um erro ao tentar realizar a postagem! Código da resposta: " +
+          resposta.status
+        );
+      }
+    })
+    .catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+    });
+   
   }
 </script>

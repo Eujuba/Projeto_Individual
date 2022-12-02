@@ -5,6 +5,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Inter", sans-serif;
+  box-sizing: border-box;
 }
 
 
@@ -45,11 +46,20 @@ body {
   justify-content: center;
 }
 
+
 .dash-right .avisos {
   width: 100%;
-  /* border: 3px solid pink; */
   color: rgb(216, 216, 216);
   font-family: "Exo 2", sans-serif;
+}
+
+.dash-right .avisos h1{
+  margin: 25px 0 15px;
+}
+
+
+.home .dash-right {
+  left: unset;
 }
 
 .dash-right .avisos .container {
@@ -64,6 +74,8 @@ body {
 
 .dash-right .avisos .container .div-form #form_postagem {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .dash-right .avisos .div-form label {
@@ -77,8 +89,7 @@ body {
 
 .dash-right .avisos .div-form textarea {
   width: 100%;
-  /* color: #E6005A; */
-  border: 3px solid #15a0d7;
+
   background-color: white;
   border-radius: 5px;
 }
@@ -93,7 +104,8 @@ body {
   padding: 10px 15px;
   color: white;
   background-color: #15a0d7;
-  width: 120px;
+  width: 100%;
+  max-width: 170px;
 }
 
 .publicacao-btn-editar {
@@ -105,7 +117,6 @@ body {
   font-size: 14px;
   padding: 5px 8px;
   color: white;
-  background-color: #15a0d7;
   width: 80px;
 }
 
@@ -116,8 +127,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  border-bottom: 3px solid #15a0d7;
   padding: 20px;
+  background-color: #005463;
 }
 
 .publicacao > *:not(:last-child) {
@@ -163,7 +174,7 @@ body {
 
 .janela {
   display: flex;
-  width: 100vw;
+  width: 100%;
 }
 
 .header-left a {
@@ -184,7 +195,16 @@ body {
   align-items: center;
   background: rgb(84,163,230);
   gap: 5px;
+  padding-top: 50px;
 }
+
+
+.header-left .logo{
+  width: 150px;
+  height: 150px;
+}
+
+
 
 .dash-right {
   display: flex;
