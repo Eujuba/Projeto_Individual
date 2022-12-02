@@ -65,16 +65,15 @@
 
           <div class="main">
             <div class="content">
-              Veja abaixo meu char js 
               <br>
               <br>
 
               <div id="grafico1" class="display-block">
                 <h3 class="tituloGraficos">
-                    <span id="tituloAquario1">123</span>
+                    <span id="tituloAquario1">Veja Quantas Pessoas tiraram cada integrante</span>
                 </h3>
                 <div class="graph">
-                    <canvas id="myChart"></canvas>
+                    <canvas id="myChart" style="height: 400px; width: 400px;"></canvas>
                 </div>
                 <div class="label-captura">
                     <p id="avisoCaptura1" style="color: white"></p>
@@ -111,12 +110,12 @@
     
 
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-    b_fkIntegrante = sessionStorage.PERSONA_USUARIO;
+    b_fkIntegrante.innerHTML = sessionStorage.PERSONA_USUARIO;
 
     var nomeIntegrante = sessionStorage.PERSONA_USUARIO;
-    b_fkIntegrante.innerHTML = nomeIntegrante;
+   b_fkIntegrante.innerHTML = nomeIntegrante;
 
-  if(nomeIntegrante == "John"){
+   if(nomeIntegrante == "John"){
     kpi_integrante.innerHTML = `<img src="../assets/persona-john.png" alt="" />`;
   } else if(nomeIntegrante == "Paul"){
     kpi_integrante.innerHTML = `<img src="../assets/persona-paul.png" alt="" />`;
@@ -125,7 +124,6 @@
   } else if(nomeIntegrante == "Ringo"){
     kpi_integrante.innerHTML = `<img src="../assets/persona-ringo.png" alt="" />`;
   }
-  
 
     function dados() {
         console.log("chegou")
@@ -147,13 +145,6 @@
     }
 
 
-
-    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
-    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
-    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
-
-
-
     function plotarGrafico(resposta ) {
         console.log('iniciando plotagem do gráfico...');
 
@@ -161,38 +152,17 @@
         let labels = [];
         
         // Criando estrutura para plotar gráfico - dados
-        let dados = {
+        const dados = {
             labels: labels,
-            datasets: [{
-                label: 'John',
-                data: [],
-                fill: false,
-                borderColor: 'rgb(75, 192, 192)',
-                tension: 0.1
-            },
-            {
-                label: 'Paul',
-                data: [],
-                fill: false,
-                borderColor: 'rgb(199, 52, 52)',
-                tension: 0.1
-            },
-            {
-                label: 'Ringo',
-                data: [],
-                fill: false,
-                borderColor: 'rgb(199, 52, 52)',
-                tension: 0.1
-            },
-            {
-                label: 'george',
-                data: [],
-                fill: false,
-                borderColor: 'rgb(199, 52, 52)',
-                tension: 0.1
-            }
+            datasets: [
           
-          ]
+            {
+                label: 'The beatles',
+                data: [],
+                fill: false,
+                backgroundColor: '#15a0d7',
+                tension: 0.1
+            }     ]
         };
         
         console.log('----------------------------------------------')
@@ -203,8 +173,7 @@
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
             labels.push(registro.nome);
-            dados.datasets[0].data.push(registro.nome);
-            dados.datasets[1].data.push(registro.qnt_tirado);
+            dados.datasets[0].data.push(registro.qnt_tirado);
         }
         
         console.log('----------------------------------------------')
@@ -230,12 +199,6 @@
         // setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 2000);
     }
 
-
-    // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
-    // buscando a última medida inserida em tabela contendo as capturas, 
-
-    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
-    //     Para ajustar o "select", ajuste o comando sql em src/models
 
 
 </script>

@@ -45,7 +45,6 @@ function atualizar(fkIntegrante){
     var instrucao = `
     update integrante set qnt_tirado =  qnt_tirado + 1 where idIntegrante = ${fkIntegrante};
 `
-
 console.log("Executando a instrução SQL: \n" + instrucao);
 return database.executar(instrucao);
 }

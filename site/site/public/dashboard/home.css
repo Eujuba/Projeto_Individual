@@ -157,8 +157,7 @@ body {
 
 .janela .main .content .input-box .submit:hover{
   background: rgb(84,163,230);
-    background: linear-gradient(121deg, rgba(84,163,230,1) 40%, rgb(179, 76, 219) 80%, rgba(211,207,36,1) 100%);    margin-top: 5px;
-
+  background: linear-gradient(121deg, rgba(84,163,230,1) 40%, rgb(179, 76, 219) 80%, rgba(211,207,36,1) 100%);    margin-top: 5px;
 }
 
 .album {
