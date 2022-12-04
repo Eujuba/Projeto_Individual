@@ -132,7 +132,8 @@
 
         var corpo = {
             titulo: form_postagem.titulo.value,
-            descricao: form_postagem.descricao.value
+            descricao: form_postagem.descricao.value,
+            idUsuario: idUsuario
         }
 
         fetch(`/comentarios/publicar/${idUsuario}`, {

@@ -7,6 +7,19 @@ CREATE TABLE  IF NOT EXISTS integrante (
     qnt_tirado int
 );
 
+CREATE TABLE IF NOT EXISTS album (
+	idAlbum int primary key auto_increment,
+    nome varchar (45),
+    qnt_tirado int
+);
+
+-- 1 pessoa pode votar em até muitos álbuns
+
+insert into album values 
+(null, 'Abbey Road', 0),
+(null, 'The Beatles', 0),
+(null, 'Help', 0);
+
 insert into integrante values
 (null, 'John Lennon', 0),
 (null, 'Paul McCartney', 0),
@@ -22,29 +35,29 @@ CREATE TABLE  IF NOT EXISTS usuario (
     foreign key (fkIntegrante) references integrante (idIntegrante)
 );
 
-CREATE TABLE  IF NOT EXISTS musica_favorita (
-    nome varchar (45),
-    fkUsuario int,
-    foreign key (fkUsuario) references usuario (id)
-);
+-- 1 pessoa pode comentar sua historia, e 1 história é feita por uma pessoa
 
 CREATE TABLE IF NOT EXISTS comentario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
+	idComentario INT PRIMARY KEY AUTO_INCREMENT,
 	titulo VARCHAR(100),
 	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
+	fkUsuario INT,
+	FOREIGN KEY (fkUsuario) REFERENCES usuario(id)
 );
 
-select* from integrante;
+        SELECT idComentario,
+            titulo,
+            descricao,
+            fkUsuario,
+            id,
+            nome,
+            email,
+            senha
+        FROM comentario
+            INNER JOIN usuario 
+                ON fkUsuario = id;
+select * from integrante;
 select nome,qnt_tirado from integrante;
-select* from usuario;
-select* from musica_favorita;
-select* from comentario;
-
-update integrante set qnt_tirado = '1'where idIntegrante = 1;
-
-select count(fkIntegrante) from usuario where fkIntegrante = 1;
-select count(fkIntegrante) from usuario where fkIntegrante = 2;
-select count(fkIntegrante) from usuario where fkIntegrante = 3;
-select count(fkIntegrante) from usuario where fkIntegrante = 4;
+select * from usuario;
+select * from comentario;
+select * from album;
